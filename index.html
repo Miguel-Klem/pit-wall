@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pit Wall — GP de São Paulo</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🏁</text></svg>">
+  <!-- Fonte do Google Fonts (Roboto). Fica antes do styles.css. -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,700;1,900&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- TOPO: logo, menu e botão (flex) -->
+  <header class="topo">
+    <div class="marca">PIT<span>WALL</span></div>
+    <nav class="menu">
+      <a href="#pilotos">Pilotos</a>
+      <a href="#classificacao">Classificação</a>
+      <a href="#ingressos">Ingressos</a>
+    </nav>
+    <a href="#ingressos" class="botao-principal">Reservar</a>
+  </header>
+
+  <!-- DESTAQUE (hero): título, botões e 3 números - A foto de fundo (img/piloto.jpg) é colocada pelo CSS. -->
+  <section class="destaque">
+    <div class="destaque-texto">
+      <p class="destaque-local">Autódromo José Carlos Pace - Interlagos</p>
+      <h1>GP de <span>São Paulo</span></h1>
+      <p>Domingo de corrida: 71 voltas, 22 pilotos no grid e a arquibancada inteira de pé na reta dos boxes.</p>
+      <div class="destaque-botoes">
+        <a href="#ingressos" class="botao-principal">Quero ir</a>
+        <a href="#classificacao" class="botao-borda">Ver classificação</a>
+      </div>
+    </div>
+
+    <div class="dados-pista">
+      <div class="dado"><strong>71</strong><span>Voltas</span></div>
+      <div class="dado"><strong>4.309</strong><span>Km por volta</span></div>
+      <div class="dado"><strong>15</strong><span>Curvas</span></div>
+    </div>
+  </section>
+
+  <!-- Zebra da pista -->
+  <div class="zebra"></div>
+
+  <!-- As 3 seções ficam dentro do main.conteudo. -->
+  <main class="conteudo">
+
+    <!-- ========== PILOTOS: grid de cards ==========
+    A classe equipe-... define a cor da equipe (variável --equipe). -->
+    <section id="pilotos">
+      <h2 class="titulo-secao"><span>01</span>Pilotos do grid</h2>
+      <div class="grade-pilotos">
+        <div class="card-piloto equipe-mclaren">
+          <div class="numero-carro">1</div>
+          <p class="nome-piloto">Lando <strong>NORRIS</strong></p>
+          <p class="equipe-piloto">McLaren</p>
+        </div>
+        <div class="card-piloto equipe-mclaren">
+          <div class="numero-carro">81</div>
+          <p class="nome-piloto">Oscar <strong>PIASTRI</strong></p>
+          <p class="equipe-piloto">McLaren</p>
+        </div>
+        <div class="card-piloto equipe-mercedes">
+          <div class="numero-carro">63</div>
+          <p class="nome-piloto">George <strong>RUSSELL</strong></p>
+          <p class="equipe-piloto">Mercedes</p>
+        </div>
+        <div class="card-piloto equipe-mercedes">
+          <div class="numero-carro">12</div>
+          <p class="nome-piloto">Kimi <strong>ANTONELLI</strong></p>
+          <p class="equipe-piloto">Mercedes</p>
+        </div>
+        <div class="card-piloto equipe-redbull">
+          <div class="numero-carro">3</div>
+          <p class="nome-piloto">Max <strong>VERSTAPPEN</strong></p>
+          <p class="equipe-piloto">Red Bull</p>
+        </div>
+        <div class="card-piloto equipe-redbull">
+          <div class="numero-carro">6</div>
+          <p class="nome-piloto">Isack <strong>HADJAR</strong></p>
+          <p class="equipe-piloto">Red Bull</p>
+        </div>
+        <div class="card-piloto equipe-ferrari">
+          <div class="numero-carro">16</div>
+          <p class="nome-piloto">Charles <strong>LECLERC</strong></p>
+          <p class="equipe-piloto">Ferrari</p>
+        </div>
+        <div class="card-piloto equipe-ferrari">
+          <div class="numero-carro">44</div>
+          <p class="nome-piloto">Lewis <strong>HAMILTON</strong></p>
+          <p class="equipe-piloto">Ferrari</p>
+        </div>
+        <div class="card-piloto equipe-williams">
+          <div class="numero-carro">23</div>
+          <p class="nome-piloto">Alexander <strong>ALBON</strong></p>
+          <p class="equipe-piloto">Williams</p>
+        </div>
+        <div class="card-piloto equipe-williams">
+          <div class="numero-carro">55</div>
+          <p class="nome-piloto">Carlos <strong>SAINZ</strong></p>
+          <p class="equipe-piloto">Williams</p>
+        </div>
+        <div class="card-piloto equipe-racingbulls">
+          <div class="numero-carro">30</div>
+          <p class="nome-piloto">Liam <strong>LAWSON</strong></p>
+          <p class="equipe-piloto">Racing Bulls</p>
+        </div>
+        <div class="card-piloto equipe-racingbulls">
+          <div class="numero-carro">41</div>
+          <p class="nome-piloto">Arvid <strong>LINDBLAD</strong></p>
+          <p class="equipe-piloto">Racing Bulls</p>
+        </div>
+        <div class="card-piloto equipe-astonmartin">
+          <div class="numero-carro">14</div>
+          <p class="nome-piloto">Fernando <strong>ALONSO</strong></p>
+          <p class="equipe-piloto">Aston Martin</p>
+        </div>
+        <div class="card-piloto equipe-astonmartin">
+          <div class="numero-carro">18</div>
+          <p class="nome-piloto">Lance <strong>STROLL</strong></p>
+          <p class="equipe-piloto">Aston Martin</p>
+        </div>
+        <div class="card-piloto equipe-haas">
+          <div class="numero-carro">31</div>
+          <p class="nome-piloto">Esteban <strong>OCON</strong></p>
+          <p class="equipe-piloto">Haas</p>
+        </div>
+        <div class="card-piloto equipe-haas">
+          <div class="numero-carro">87</div>
+          <p class="nome-piloto">Oliver <strong>BEARMAN</strong></p>
+          <p class="equipe-piloto">Haas</p>
+        </div>
+        <div class="card-piloto equipe-audi">
+          <div class="numero-carro">27</div>
+          <p class="nome-piloto">Nico <strong>HÜLKENBERG</strong></p>
+          <p class="equipe-piloto">Audi</p>
+        </div>
+        <div class="card-piloto equipe-audi">
+          <div class="numero-carro">5</div>
+          <p class="nome-piloto">Gabriel <strong>BORTOLETO</strong></p>
+          <p class="equipe-piloto">Audi</p>
+        </div>
+        <div class="card-piloto equipe-alpine">
+          <div class="numero-carro">10</div>
+          <p class="nome-piloto">Pierre <strong>GASLY</strong></p>
+          <p class="equipe-piloto">Alpine</p>
+        </div>
+        <div class="card-piloto equipe-alpine">
+          <div class="numero-carro">43</div>
+          <p class="nome-piloto">Franco <strong>COLAPINTO</strong></p>
+          <p class="equipe-piloto">Alpine</p>
+        </div>
+        <div class="card-piloto equipe-cadillac">
+          <div class="numero-carro">11</div>
+          <p class="nome-piloto">Sergio <strong>PÉREZ</strong></p>
+          <p class="equipe-piloto">Cadillac</p>
+        </div>
+        <div class="card-piloto equipe-cadillac">
+          <div class="numero-carro">77</div>
+          <p class="nome-piloto">Valtteri <strong>BOTTAS</strong></p>
+          <p class="equipe-piloto">Cadillac</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CLASSIFICAÇÃO: filtros + tabela ==========
+    Os filtros só aparecem (não filtram de verdade). -->
+    <section id="classificacao">
+      <h2 class="titulo-secao"><span>02</span>Classificação de 2026</h2>
+
+      <form action="#" class="filtros">
+        <div class="filtro">
+          <label for="busca">Buscar piloto</label>
+          <input type="text" id="busca" name="busca" placeholder="Nome ou equipe...">
+        </div>
+        <div class="filtro">
+          <label for="equipe">Equipe</label>
+          <select id="equipe" name="equipe">
+            <option value="">Todas as equipes</option>
+            <option value="McLaren">McLaren</option>
+            <option value="Mercedes">Mercedes</option>
+            <option value="Red Bull">Red Bull</option>
+            <option value="Ferrari">Ferrari</option>
+            <option value="Williams">Williams</option>
+            <option value="Racing Bulls">Racing Bulls</option>
+            <option value="Aston Martin">Aston Martin</option>
+            <option value="Haas">Haas</option>
+            <option value="Audi">Audi</option>
+            <option value="Alpine">Alpine</option>
+            <option value="Cadillac">Cadillac</option>
+          </select>
+        </div>
+        <button type="submit" class="botao-borda">Filtrar</button>
+      </form>
+
+      <div class="caixa-tabela">
+        <table>
+          <thead>
+            <tr>
+              <th>Pos.</th>
+              <th>Piloto</th>
+              <th>País</th>
+              <th>Equipe</th>
+              <th>Pontos</th>
+              <th>Vitórias</th>
+              <th>Pódios</th>
+            </tr>
+          </thead>
+          <tbody>
+          <tr class="equipe-mercedes lider">
+            <td><span class="posicao">1</span></td>
+            <td><span class="barra"></span>A. Antonelli</td>
+            <td>Itália</td>
+            <td>Mercedes</td>
+            <td class="pontos">390</td>
+            <td>9</td>
+            <td>16</td>
+          </tr>
+          <tr class="equipe-redbull">
+            <td><span class="posicao">2</span></td>
+            <td><span class="barra"></span>M. Verstappen</td>
+            <td>Países Baixos</td>
+            <td>Red Bull</td>
+            <td class="pontos">279</td>
+            <td>3</td>
+            <td>12</td>
+          </tr>
+          <tr class="equipe-mercedes">
+            <td><span class="posicao">3</span></td>
+            <td><span class="barra"></span>G. Russell</td>
+            <td>Reino Unido</td>
+            <td>Mercedes</td>
+            <td class="pontos">262</td>
+            <td>3</td>
+            <td>8</td>
+          </tr>
+          <tr class="equipe-ferrari">
+            <td><span class="posicao">4</span></td>
+            <td><span class="barra"></span>L. Hamilton</td>
+            <td>Reino Unido</td>
+            <td>Ferrari</td>
+            <td class="pontos">261</td>
+            <td>1</td>
+            <td>7</td>
+          </tr>
+          <tr class="equipe-ferrari">
+            <td><span class="posicao">5</span></td>
+            <td><span class="barra"></span>C. Leclerc</td>
+            <td>Mônaco</td>
+            <td>Ferrari</td>
+            <td class="pontos">251</td>
+            <td>1</td>
+            <td>6</td>
+          </tr>
+          <tr class="equipe-mclaren">
+            <td><span class="posicao">6</span></td>
+            <td><span class="barra"></span>L. Norris</td>
+            <td>Reino Unido</td>
+            <td>McLaren</td>
+            <td class="pontos">246</td>
+            <td>3</td>
+            <td>6</td>
+          </tr>
+          <tr class="equipe-mclaren">
+            <td><span class="posicao">7</span></td>
+            <td><span class="barra"></span>O. Piastri</td>
+            <td>Austrália</td>
+            <td>McLaren</td>
+            <td class="pontos">152</td>
+            <td>0</td>
+            <td>2</td>
+          </tr>
+          <tr class="equipe-redbull">
+            <td><span class="posicao">8</span></td>
+            <td><span class="barra"></span>I. Hadjar</td>
+            <td>França</td>
+            <td>Red Bull</td>
+            <td class="pontos">122</td>
+            <td>0</td>
+            <td>3</td>
+          </tr>
+          <tr class="equipe-racingbulls">
+            <td><span class="posicao">9</span></td>
+            <td><span class="barra"></span>L. Lawson</td>
+            <td>Nova Zelândia</td>
+            <td>Racing Bulls</td>
+            <td class="pontos">87</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr class="equipe-alpine">
+            <td><span class="posicao">10</span></td>
+            <td><span class="barra"></span>P. Gasly</td>
+            <td>França</td>
+            <td>Alpine</td>
+            <td class="pontos">42</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr class="equipe-racingbulls">
+            <td><span class="posicao">11</span></td>
+            <td><span class="barra"></span>A. Lindblad</td>
+            <td>Reino Unido</td>
+            <td>Racing Bulls</td>
+            <td class="pontos">38</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr class="equipe-alpine">
+            <td><span class="posicao">12</span></td>
+            <td><span class="barra"></span>F. Colapinto</td>
+            <td>Argentina</td>
+            <td>Alpine</td>
+            <td class="pontos">27</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr class="equipe-haas">
+            <td><span class="posicao">13</span></td>
+            <td><span class="barra"></span>O. Bearman</td>
+            <td>Reino Unido</td>
+            <td>Haas</td>
+            <td class="pontos">23</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr class="equipe-audi">
+            <td><span class="posicao">14</span></td>
+            <td><span class="barra"></span>G. Bortoleto</td>
+            <td>Brasil</td>
+            <td>Audi</td>
+            <td class="pontos">14</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr class="equipe-audi">
+            <td><span class="posicao">15</span></td>
+            <td><span class="barra"></span>N. Hülkenberg</td>
+            <td>Alemanha</td>
+            <td>Audi</td>
+            <td class="pontos">14</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr class="equipe-haas">
+            <td><span class="posicao">16</span></td>
+            <td><span class="barra"></span>E. Ocon</td>
+            <td>França</td>
+            <td>Haas</td>
+            <td class="pontos">7</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr class="equipe-astonmartin">
+            <td><span class="posicao">17</span></td>
+            <td><span class="barra"></span>F. Alonso</td>
+            <td>Espanha</td>
+            <td>Aston Martin</td>
+            <td class="pontos">7</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr class="equipe-williams">
+            <td><span class="posicao">18</span></td>
+            <td><span class="barra"></span>C. Sainz Jr</td>
+            <td>Espanha</td>
+            <td>Williams</td>
+            <td class="pontos">7</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr class="equipe-williams">
+            <td><span class="posicao">19</span></td>
+            <td><span class="barra"></span>A. Albon</td>
+            <td>Tailândia</td>
+            <td>Williams</td>
+            <td class="pontos">5</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr class="equipe-racingbulls">
+            <td><span class="posicao">20</span></td>
+            <td><span class="barra"></span>Y. Tsunoda</td>
+            <td>Japão</td>
+            <td>Racing Bulls</td>
+            <td class="pontos">1</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr class="equipe-haas">
+            <td><span class="posicao">21</span></td>
+            <td><span class="barra"></span>R. Hirakawa</td>
+            <td>Japão</td>
+            <td>Haas</td>
+            <td class="pontos">1</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr class="equipe-astonmartin">
+            <td><span class="posicao">22</span></td>
+            <td><span class="barra"></span>L. Stroll</td>
+            <td>Canadá</td>
+            <td>Aston Martin</td>
+            <td class="pontos">0</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr class="equipe-cadillac">
+            <td><span class="posicao">23</span></td>
+            <td><span class="barra"></span>V. Bottas</td>
+            <td>Finlândia</td>
+            <td>Cadillac</td>
+            <td class="pontos">0</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr class="equipe-cadillac">
+            <td><span class="posicao">24</span></td>
+            <td><span class="barra"></span>S. Pérez</td>
+            <td>México</td>
+            <td>Cadillac</td>
+            <td class="pontos">0</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr class="equipe-haas">
+            <td><span class="posicao">25</span></td>
+            <td><span class="barra"></span>R. Camara</td>
+            <td>Brasil</td>
+            <td>Haas</td>
+            <td class="pontos">0</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ========== INGRESSOS: texto | formulário ==========
+    section.area-ingressos é uma grade de 2 colunas; dentro do form,
+    a grade-formulario cria outra grade de 2 colunas. -->
+    <section id="ingressos" class="area-ingressos">
+      <div class="info-ingressos">
+        <h2 class="titulo-secao"><span>03</span>Ingressos</h2>
+        <p>Escolha o seu setor e garanta o lugar para ver a corrida de pertinho.</p>
+        <p class="aviso">Restam poucos lugares na Curva do S!</p>
+        <div class="linha-preco"><span>Arquibancada</span><strong>R$ 450</strong></div>
+        <div class="linha-preco"><span>Curva do S</span><strong>R$ 780</strong></div>
+        <div class="linha-preco"><span>Camarote</span><strong>R$ 2.200</strong></div>
+      </div>
+
+      <form action="#" class="formulario-ingressos">
+        <div class="grade-formulario">
+
+          <div class="grupo-campo">
+            <label for="nome">Nome completo</label>
+            <input type="text" id="nome" name="nome" required placeholder="Como está no documento">
+          </div>
+
+          <div class="grupo-campo">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required placeholder="voce@email.com">
+          </div>
+
+          <div class="grupo-campo">
+            <label for="setor">Setor</label>
+            <select id="setor" name="setor" required>
+              <option value="">Escolha o setor</option>
+              <option value="arquibancada">Arquibancada</option>
+              <option value="curva">Curva do S</option>
+              <option value="camarote">Camarote</option>
+            </select>
+          </div>
+
+          <div class="grupo-campo">
+            <label for="dia">Dia da corrida</label>
+            <input type="date" id="dia" name="dia" required>
+          </div>
+
+          <div class="grupo-campo">
+            <label for="quantidade">Ingressos</label>
+            <input type="number" id="quantidade" name="quantidade" min="1" max="6" value="1">
+            <small>Máximo de 6 por pessoa.</small>
+          </div>
+
+          <div class="grupo-campo">
+            <label for="perfil">Seu perfil (opcional)</label>
+            <input type="url" id="perfil" name="perfil" placeholder="https://instagram.com/...">
+          </div>
+
+          <!-- inteiro: ocupa as 2 colunas. -->
+          <div class="grupo-campo inteiro">
+            <label for="foto">Foto da torcida</label>
+            <input type="file" id="foto" name="foto" accept="image/*">
+            <small>JPG ou PNG · a melhor foto aparece no telão.</small>
+          </div>
+
+          <div class="grupo-campo inteiro">
+            <label for="recado">Recado para o seu piloto favorito</label>
+            <textarea id="recado" name="recado" placeholder="Vai, Bortoleto! Interlagos é sua casa..."></textarea>
+          </div>
+
+          <div class="inteiro">
+            <button type="submit" class="botao-principal">Reservar ingressos</button>
+          </div>
+
+        </div>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- ========== RODAPÉ: nome completo é obrigatório ========== -->
+  <footer>
+    <p>PIT<span>WALL</span> · Projeto de estudo de HTML e CSS · Feito por Miguel Bompadre Klem</p>
+    <p>Os preços dos ingressos são ilustrativos.</p>
+  </footer>
+
+</body>
+</html>

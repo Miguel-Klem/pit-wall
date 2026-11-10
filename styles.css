@@ -1,0 +1,490 @@
+/* =============================================
+PIT WALL: Folha de Estilos
+GP de São Paulo · Interlagos
+============================================= */
+
+
+/* -----------------------------------------------
+1. VARIÁVEIS E RESET
+----------------------------------------------- */
+/* :root guarda as cores e a fonte. Para mudar o visual,
+é só trocar os valores aqui. */
+:root {
+  --preto: #0a0a0f;        /* fundo da página */
+  --painel: #15131c;       /* fundo dos cards, tabela e formulário */
+  --roxo: #8b5cf6;         /* cor principal */
+  --roxo-escuro: #6d28d9;  /* roxo do hover */
+  --lilas: #c4b5fd;
+  --branco: #f5f5f7;
+  --cinza: #9a98a8;        /* textos menos importantes */
+  --linha: #2a2733;        /* bordas */
+  --fonte: 'Roboto', Arial, sans-serif;
+
+  /* cores das equipes */
+  --mclaren: #ff8000;
+  --mercedes: #27f4d2;
+  --redbull: #3671c6;
+  --ferrari: #e8002d;
+  --williams: #64c4ff;
+  --racingbulls: #6692ff;
+  --astonmartin: #229971;
+  --haas: #d9d9d9;
+  --audi: #8f8f99;
+  --alpine: #ff87bc;
+  --cadillac: #d4af37;
+}
+
+/* Reset: zera as margens do navegador.
+box-sizing: border-box faz a largura já incluir o padding. */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fonte);
+  background: var(--preto);
+  color: var(--branco);
+  line-height: 1.6;
+}
+
+
+/* 2. CLASSES DAS EQUIPES */
+/* Cada classe só troca a variável --equipe.
+Os cards e a tabela usam var(--equipe) e pegam a cor certa. */
+
+.equipe-mclaren { --equipe: var(--mclaren); }
+.equipe-mercedes { --equipe: var(--mercedes); }
+.equipe-redbull { --equipe: var(--redbull); }
+.equipe-ferrari { --equipe: var(--ferrari); }
+.equipe-williams { --equipe: var(--williams); }
+.equipe-racingbulls { --equipe: var(--racingbulls); }
+.equipe-astonmartin { --equipe: var(--astonmartin); }
+.equipe-haas { --equipe: var(--haas); }
+.equipe-audi { --equipe: var(--audi); }
+.equipe-alpine { --equipe: var(--alpine); }
+.equipe-cadillac { --equipe: var(--cadillac); }
+
+
+/* -----------------------------------------------
+3. LAYOUT BASE E BOTÕES
+----------------------------------------------- */
+/* Caixa central das seções. */
+.conteudo {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* Botões e campos não herdam a fonte sozinhos. */
+button, input, select, textarea {
+  font-family: var(--fonte);
+}
+
+/* .botao-principal = botão cheio. .botao-borda = só a borda. */
+.botao-principal,
+.botao-borda {
+  display: inline-block;
+  padding: .75rem 1.5rem;
+  border: 2px solid var(--roxo);
+  font-size: .85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.botao-principal { background: var(--roxo); color: var(--branco); }
+.botao-principal:hover { background: var(--roxo-escuro); border-color: var(--roxo-escuro); }
+
+.botao-borda { background: transparent; border-color: var(--branco); color: var(--branco); }
+.botao-borda:hover { background: var(--branco); color: var(--preto); }
+
+
+/* -----------------------------------------------
+4. TOPO
+----------------------------------------------- */
+/* flex + space-between: logo na esquerda, botão na direita,
+menu no meio. */
+.topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 32px;
+  border-bottom: 1px solid var(--linha);
+}
+
+.marca {
+  font-size: 1.6rem;
+  font-weight: 900;
+  font-style: italic;
+}
+
+/* O span pinta só a palavra WALL. */
+.marca span { color: var(--roxo); }
+
+.menu { display: flex; gap: 32px; }
+
+.menu a {
+  color: var(--cinza);
+  font-size: .85rem;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.menu a:hover { color: var(--branco); }
+
+
+/* -----------------------------------------------
+5. DESTAQUE (HERO) E ZEBRA
+----------------------------------------------- */
+/* O fundo tem duas camadas separadas por vírgula:
+a de cima é o degradê com a faixa roxa; a de baixo é a foto.
+Duas cores na mesma porcentagem fazem o corte seco.
+contain mostra a foto inteira, sem cortar nem aumentar demais. */
+.destaque {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  min-height: 520px;
+  padding: 90px 32px 50px;
+  background:
+    linear-gradient(100deg,
+      var(--preto) 0%, var(--preto) 58%,
+      var(--roxo) 100%,
+      rgba(10,10,15,.35) 60%),
+    url("img/piloto.jpg") right center / contain no-repeat;
+}
+
+.destaque-texto { max-width: 560px; }
+
+.destaque-local {
+  color: var(--roxo);
+  font-size: .8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.destaque h1 {
+  font-size: 4.5rem;
+  font-weight: 900;
+  font-style: italic;
+  text-transform: uppercase;
+  line-height: 1;
+  margin-bottom: 20px;
+}
+
+/* span é inline; display: block faz descer para a linha de baixo. */
+.destaque h1 span { display: block; color: var(--lilas); }
+
+.destaque p { color: var(--cinza); margin-bottom: 28px; }
+
+.destaque-botoes { display: flex; gap: 14px; flex-wrap: wrap; }
+
+/* Os 3 números lado a lado. */
+.dados-pista { display: flex; }
+
+.dado {
+  padding: 0 20px;
+  border-left: 1px solid var(--cinza);
+  text-align: center;
+}
+
+.dado strong {
+  display: block;
+  font-size: 2rem;
+  font-weight: 900;
+  font-style: italic;
+}
+
+.dado span {
+  color: var(--cinza);
+  font-size: .7rem;
+  text-transform: uppercase;
+}
+
+/* Zebra da pista: div vazia com altura. O repeating-linear-gradient
+repete o desenho de 80px (40px roxo + 40px branco) até o fim. */
+.zebra {
+  height: 20px;
+  background: repeating-linear-gradient(90deg,
+    var(--preto) 0, var(--preto) 40px,
+    var(--branco) 40px, var(--branco) 80px);
+    
+    
+}
+
+
+/* -----------------------------------------------
+6. SEÇÕES
+----------------------------------------------- */
+section { padding: 60px 0 30px; }
+
+.titulo-secao {
+  font-size: 2rem;
+  font-weight: 900;
+  font-style: italic;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.titulo-secao span {
+  margin-right: 10px;
+  color: var(--roxo);
+  font-size: .9rem;
+}
+
+
+/* -----------------------------------------------
+7. CARDS DOS PILOTOS
+----------------------------------------------- */
+/* auto-fit + minmax(220px, 1fr): quantas colunas couberem,
+cada uma com no mínimo 220px. */
+.grade-pilotos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.card-piloto {
+  padding: 18px 20px;
+  background: var(--painel);
+  border-top: 5px solid var(--equipe);
+  transition: transform .2s;
+}
+
+.card-piloto:hover { transform: translateY(-6px); }
+
+/* Número do carro: grande e apagado (opacity). */
+.numero-carro {
+  color: var(--equipe);
+  font-size: 4.5rem;
+  font-weight: 900;
+  font-style: italic;
+  line-height: 1.1;
+  opacity: .35;
+}
+
+.nome-piloto strong { font-weight: 900; text-transform: uppercase; }
+.equipe-piloto { color: var(--cinza); font-size: .85rem; }
+
+
+/* -----------------------------------------------
+8. CAMPOS DE FORMULÁRIO
+----------------------------------------------- */
+label {
+  display: block;
+  margin-bottom: .4rem;
+  color: var(--cinza);
+  font-size: .75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="date"],
+input[type="number"],
+input[type="file"],
+select,
+textarea {
+  width: 100%;
+  padding: .7rem .9rem;
+  background: var(--preto);
+  border: 1px solid var(--linha);
+  color: var(--branco);
+  font-size: .95rem;
+}
+
+/* Campo clicado: borda roxa. */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--roxo);
+}
+
+textarea { min-height: 100px; resize: vertical; }
+
+small {
+  display: block;
+  margin-top: .3rem;
+  color: var(--cinza);
+  font-size: .8rem;
+}
+
+
+/* -----------------------------------------------
+9. CLASSIFICAÇÃO: FILTROS E TABELA
+----------------------------------------------- */
+/* Filtros em flex. flex: 1 divide o espaço igual entre os campos. */
+.filtros {
+  display: flex;
+  gap: 16px;
+  align-items: flex-end;
+  margin-bottom: 20px;
+}
+
+.filtro { flex: 1; }
+
+/* Caixa da tabela: rola para o lado quando não cabe. */
+.caixa-tabela {
+  background: var(--painel);
+  overflow-x: auto;
+}
+
+table { width: 100%; border-collapse: collapse; }
+
+th, td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--linha);
+}
+
+th {
+  color: var(--cinza);
+  font-size: .75rem;
+  text-transform: uppercase;
+}
+
+tbody tr:hover { background: #1f1c29; }
+
+/* Quadradinho com a posição. */
+.posicao {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  background: var(--branco);
+  color: var(--preto);
+  font-weight: 900;
+}
+
+/* Linha do líder: fundo roxo fraco e quadrado roxo. */
+.lider { background: rgba(139,92,246,.15); }
+.lider .posicao { background: var(--roxo); color: var(--branco); }
+
+/* Barrinha com a cor da equipe (mesma variável dos cards). */
+.barra {
+  display: inline-block;
+  width: 4px;
+  height: 18px;
+  margin-right: 10px;
+  background: var(--equipe);
+  vertical-align: middle;
+}
+
+.pontos { font-weight: 900; }
+
+
+/* -----------------------------------------------
+10. INGRESSOS
+----------------------------------------------- */
+/* 2 colunas: texto (1fr) e formulário (1.6fr, mais largo). */
+.area-ingressos {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.info-ingressos p { color: var(--cinza); }
+
+.aviso {
+  margin: 20px 0;
+  padding: 12px 16px;
+  border-left: 4px solid var(--lilas);
+  color: var(--lilas);
+  font-weight: 700;
+}
+
+/* Setor na esquerda, preço na direita. */
+.linha-preco {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--linha);
+}
+
+.linha-preco strong { color: var(--lilas); }
+
+.formulario-ingressos {
+  padding: 28px;
+  background: var(--painel);
+  border-top: 4px solid var(--roxo);
+}
+
+/* grade-formulario: 2 colunas iguais. A classe inteiro ocupa
+as duas (grid-column: 1 / -1 = da primeira à última coluna). */
+.grade-formulario {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 24px;
+}
+
+.grupo-campo { margin-bottom: 18px; }
+
+.grade-formulario .inteiro { grid-column: 1 / -1; }
+
+.formulario-ingressos .botao-principal { width: 100%; }
+
+
+/* -----------------------------------------------
+11. RODAPÉ
+----------------------------------------------- */
+footer {
+  margin-top: 60px;
+  padding: 28px 16px;
+  border-top: 1px solid var(--linha);
+  color: var(--cinza);
+  font-size: .85rem;
+  text-align: center;
+}
+
+footer span { color: var(--roxo); }
+
+
+/* -----------------------------------------------
+12. CELULAR
+----------------------------------------------- */
+/* Fica no FIM do arquivo para vencer as regras de cima.
+Vale para telas de até 768px. */
+@media (max-width: 768px) {
+  .topo { padding: 14px 16px; }
+  .menu { display: none; }
+
+  /* O destaque vira coluna e perde a faixa e a foto. */
+  .destaque {
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 0;
+    padding: 50px 16px 30px;
+    background: var(--preto);
+  }
+  .destaque h1 { font-size: 3.2rem; }
+  .dados-pista { margin-top: 30px; }
+  .dado { padding: 0 14px; }
+
+  .conteudo { padding: 0 16px; }
+  .titulo-secao { font-size: 1.6rem; }
+
+  /* Pilotos: 2 por linha. */
+  .grade-pilotos { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .numero-carro { font-size: 3.2rem; }
+
+  /* Filtros empilhados. */
+  .filtros { flex-direction: column; align-items: stretch; }
+
+  /* A tabela não cabe: rola para o lado e o texto não quebra. */
+  table { min-width: 700px; }
+  th, td { white-space: nowrap; }
+
+  /* Ingressos e formulário em 1 coluna. */
+  .area-ingressos { grid-template-columns: 1fr; }
+  .grade-formulario { grid-template-columns: 1fr; }
+  .formulario-ingressos { padding: 20px; }
+}
