@@ -5,13 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pit Wall — GP de São Paulo</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>🏁</text></svg>">
-  <!-- Fonte do Google Fonts (Barlow). -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;800&display=swap">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- TOPO: logo, menu e botão (flex) -->
+  <!-- Logo, menu e botão (flex) -->
   <header class="topo">
     <div class="marca">PIT<span>WALL</span></div>
     <nav class="menu">
@@ -22,12 +20,12 @@
     <a href="#ingressos" class="botao-principal">Reservar</a>
   </header>
 
-  <!-- DESTAQUE (hero): painel roxo com o título e, ao lado, a foto de fundo -->
+  <!-- Hero: painel roxo com o título e, ao lado, a foto de fundo -->
   <section class="destaque">
     <div class="destaque-texto">
       <p class="destaque-local">Autódromo José Carlos Pace - Interlagos</p>
       <h1>GP de <span>São Paulo</span></h1>
-      <p>Domingo de corrida: 71 voltas, 22 pilotos no grid e a arquibancada inteira de pé na reta dos boxes.</p>
+      <p>Domingo de corrida: 71 voltas, 25 pilotos no grid e a arquibancada inteira de pé na reta dos boxes.</p>
       <div class="destaque-botoes">
         <a href="#ingressos" class="botao-principal">Quero ir</a>
         <a href="#classificacao" class="botao-borda">Ver classificação</a>
@@ -46,7 +44,7 @@
 
   <main class="conteudo">
 
-    <!-- PILOTOS: a classe equipe-... define a cor da equipe (variável --equipe) -->
+    <!-- Pilotos: a classe equipe-x define a cor da equipe (variável --equipe do css) -->
     <section id="pilotos">
       <h2 class="titulo-secao">Pilotos do grid</h2>
       <div class="grade-pilotos">
@@ -207,14 +205,14 @@
       </div>
     </section>
 
-    <!-- CLASSIFICAÇÃO: filtros + tabela (os filtros só aparecem, não filtram de verdade) -->
+    <!-- Classificação: filtros + tabela -->
     <section id="classificacao">
       <h2 class="titulo-secao">Classificação de 2026</h2>
 
       <form action="#" class="filtros">
         <div class="filtro">
           <label for="busca">Buscar piloto</label>
-          <input type="text" id="busca" name="busca" placeholder="Nome ou equipe...">
+          <input type="text" id="busca" name="busca" placeholder="Nome ou equipe">
         </div>
         <div class="filtro">
           <label for="equipe">Equipe</label>
@@ -480,15 +478,15 @@
       </div>
     </section>
 
-    <!-- INGRESSOS: texto | formulário. Dentro do form, a grade-formulario tem 2 colunas -->
+    <!-- Ingressos e Tabela de Preços -->
     <section id="ingressos" class="area-ingressos">
       <div class="info-ingressos">
         <h2 class="titulo-secao">Ingressos</h2>
-        <p>Escolha o seu setor e garanta o lugar para ver a corrida de pertinho.</p>
-        <p class="aviso">Restam poucos lugares na Curva do S!</p>
-        <div class="linha-preco"><span>Arquibancada</span><strong>R$ 450</strong></div>
-        <div class="linha-preco"><span>Curva do S</span><strong>R$ 780</strong></div>
-        <div class="linha-preco"><span>Camarote</span><strong>R$ 2.200</strong></div>
+        <p>Escolha o seu setor e garanta o lugar para ver a corrida.</p>
+        <p class="aviso">Últimos 120 lugares no Setor da Reta!!!</p>
+        <div class="linha-preco"><span>Arquibancada A</span><strong>R$ 480</strong></div>
+        <div class="linha-preco"><span>Setor da Reta</span><strong>R$ 890</strong></div>
+        <div class="linha-preco"><span>Box Vip</span><strong>R$ 2400</strong></div>
       </div>
 
       <form action="#" class="formulario-ingressos">
@@ -496,21 +494,21 @@
 
           <div class="campo">
             <label for="nome">Nome completo</label>
-            <input type="text" id="nome" name="nome" required placeholder="Como está no documento">
+            <input type="text" id="nome" name="nome" required placeholder="Ex: Alfredo Silva">
           </div>
 
           <div class="campo">
             <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" required placeholder="voce@email.com">
+            <input type="email" id="email" name="email" required placeholder="exemplo@email.com">
           </div>
 
           <div class="campo">
             <label for="setor">Setor</label>
             <select id="setor" name="setor" required>
               <option value="">Escolha o setor</option>
-              <option value="arquibancada">Arquibancada</option>
-              <option value="curva">Curva do S</option>
-              <option value="camarote">Camarote</option>
+              <option value="arquibancada">Arquibancada A</option>
+              <option value="curva">Setor da Reta</option>
+              <option value="camarote">Box Vip</option>
             </select>
           </div>
 
@@ -534,12 +532,12 @@
           <div class="campo inteiro">
             <label for="foto">Foto da torcida</label>
             <input type="file" id="foto" name="foto" accept="image/*">
-            <small>JPG ou PNG · a melhor foto aparece no telão.</small>
+            <small>JPG ou PNG - a melhor foto aparece no telão!</small>
           </div>
 
           <div class="campo inteiro">
             <label for="recado">Recado para o seu piloto favorito</label>
-            <textarea id="recado" name="recado" placeholder="Vai, Bortoleto! Interlagos é sua casa..."></textarea>
+            <textarea id="recado" name="recado" placeholder="Vai, Hamilton! Interlagos é sua casa..."></textarea>
           </div>
 
           <div class="inteiro">
@@ -552,9 +550,9 @@
 
   </main>
 
-  <!-- RODAPÉ: nome completo é obrigatório -->
+  <!-- Rodapé -->
   <footer>
-    <p>PIT<span>WALL</span> · Projeto de estudo de HTML e CSS · Feito por Miguel Bompadre Klem</p>
+    <p>PIT<span>WALL</span> - Projeto de estudo de HTML e CSS - Feito por Miguel Bompadre Klem</p>
     <p>Os preços dos ingressos são ilustrativos.</p>
   </footer>
 

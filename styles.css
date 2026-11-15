@@ -1,32 +1,31 @@
-/* PIT WALL: Folha de Estilos
-GP de São Paulo · Interlagos */
-
-
 /* 1. VARIÁVEIS E RESET */
+
 /* :root guarda as cores e a fonte. Para mudar o visual, é só trocar aqui. */
 :root {
-  --preto: #0b0b10;        /* fundo da página */
-  --painel: #16141d;       /* fundo dos cards, tabela e formulário */
-  --roxo: #8b5cf6;         /* cor principal */
-  --roxo-escuro: #6d28d9;  /* painel do destaque e hover */
-  --lilas: #c4b5fd;
-  --branco: #f5f5f7;
-  --cinza: #9a98a8;        /* textos menos importantes */
-  --linha: #2a2733;        /* bordas */
-  --fonte: 'Barlow', Arial, sans-serif;
+  --preto: #0b0b10;  /* fundo da página */
+  --painel: #16141d;  /* fundo dos cards, tabela e formulário */
+  --roxo: #946eec;  /* cor principal */
+  --roxo-escuro: #5500df;  /* painel do destaque e hover */
+  --lilas: #c2b6f0;
+  --branco: #ffffff;
+  --cinza: #848291;  /* textos menos importantes */
+  --linha: #393349;  /* bordas */
+  --amarelo: #231e0d;  /* aviso de ingressos */
+  --amarelo-escuro: #ffd500;  /* borda do aviso de ingressos */
+  --fonte: Arial, sans-serif;
 
   /* cores das equipes */
-  --mclaren: #ff8000;
-  --mercedes: #27f4d2;
-  --redbull: #3671c6;
-  --ferrari: #e8002d;
-  --williams: #64c4ff;
-  --racingbulls: #6692ff;
-  --astonmartin: #229971;
-  --haas: #d9d9d9;
-  --audi: #8f8f99;
-  --alpine: #ff87bc;
-  --cadillac: #d4af37;
+  --mclaren: #e56717 ;  /* Papaya Orange */
+  --mercedes: #81D8D0 ;  /* Azul Tiffany clássico */
+  --redbull: #28428c;  /* Azul Escuro */
+  --ferrari: #d40000;  /* Rosso Corsa */
+  --williams: #00A0DE ;  /*  Williams Racing */
+  --racingbulls: #3671c6;  /*  Moderate Blue */
+  --astonmartin: #229971;  /* Verde-Ciano Médio-Escuro */
+  --haas: #dee1e2;  /* Cinza-gelo */
+  --audi: #ff2d00;  /* Escarlate */
+  --alpine: #00a1e8;  /* Fresh Blue of Bel Air ou Vivid Cerulean */
+  --cadillac: #aaaaad;  /* Prata Metálico */
 }
 
 /* Reset: zera as margens do navegador. */
@@ -116,7 +115,7 @@ button, input, select, textarea {
 
 
 /* 5. DESTAQUE (HERO) E ZEBRA */
-/* Duas metades lado a lado: texto no painel roxo e foto no fundo da outra. */
+/* Texto no painel roxo e foto no fundo da outra. */
 .destaque { display: flex; padding: 0; }
 
 .destaque-texto {
@@ -132,7 +131,7 @@ button, input, select, textarea {
 .destaque-foto {
   flex: 1;
   min-height: 540px;
-  background: url("img/piloto.jpg") center / cover no-repeat;
+  background: url("/img/piloto.jpg") center / cover no-repeat;
 }
 
 .destaque-local {
@@ -176,9 +175,9 @@ button, input, select, textarea {
 /* Zebra da pista: div vazia com altura. O repeating-linear-gradient
 repete o desenho de 80px (40px roxo + 40px branco) até o fim. */
 .zebra {
-  height: 20px;
-  background: repeating-linear-gradient(90deg,
-    var(--roxo) 0, var(--roxo) 40px,
+  height: 30px;
+  background: repeating-linear-gradient(90deg, 
+    var(--roxo) 0, var(--roxo-escuro) 40px,
     var(--branco) 40px, var(--branco) 80px);
 }
 
@@ -339,8 +338,8 @@ tbody tr:hover { background: var(--linha); }
 .aviso {
   margin: 20px 0;
   padding: 12px 16px;
-  border-left: 4px solid var(--lilas);
-  color: var(--lilas);
+  border-left: 5px solid var(--amarelo-escuro);
+  background-color: var(--amarelo);
   font-weight: 600;
 }
 
