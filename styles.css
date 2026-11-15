@@ -12,7 +12,7 @@
   --linha: #393349;  /* bordas */
   --amarelo: #231e0d;  /* aviso de ingressos */
   --amarelo-escuro: #ffd500;  /* borda do aviso de ingressos */
-  --fonte: Arial, sans-serif;
+  --fonte: 'Barlow', Arial, sans-serif;
 
   /* cores das equipes */
   --mclaren: #e56717 ;  /* Papaya Orange */
