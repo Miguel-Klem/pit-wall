@@ -360,8 +360,7 @@ tbody tr:hover { background: var(--linha); }
   border-top: 4px solid var(--roxo);
 }
 
-/* grade-formulario: 2 colunas iguais. A classe inteiro ocupa as duas
-(grid-column: 1 / -1 = da primeira à última coluna). */
+/* grade-formulario: 2 colunas iguais.  Aclasse inteiro ocupa as duas (grid-column: 1 / -1 = da primeira à última coluna) */
 .grade-formulario {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -388,7 +387,7 @@ footer span { color: var(--roxo); }
 
 
 /* 12. CELULAR */
-/* Fica no FIM do arquivo para vencer as regras de cima. */
+/* Sempre no final do arquivo para se sobresair as regras de cima. */
 @media (max-width: 768px) {
   .topo { padding: 14px 16px; }
   .menu { display: none; }
